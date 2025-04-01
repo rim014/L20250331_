@@ -1,40 +1,28 @@
 #include <iostream>
-
 using namespace std;
 
-int main()
-{
-	int Number1 = 5;
-	int Number2 = 4;
+int main() {
+    double num1, num2;
 
+    cout << "µÎ °³ÀÇ ¼ıÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä: ";
+    cin >> num1 >> num2;
 
-	//Çüº¯È¯ ,Casting
-	float A = ((float)5.0000000f;//f ºÙÀÌ´Â ÀÌÀ¯´Â ÇÃ·Ô¾²·Á°í
-	int B = (int)A;
-	int Number3 = Number1 + Number2;
-	
-	cout << Number3 << endl;
+    bool isInteger = (num1 == (int)num1) && (num2 == (int)num2);
 
-	int Number3 = Number1 + Number2;
+    cout << "µ¡¼À: " << num1 << " + " << num2 << " = " << (num1 + num2) << endl;
+    cout << "»¬¼À: " << num1 << " - " << num2 << " = " << (num1 - num2) << endl;
+    cout << "°ö¼À: " << num1 << " * " << num2 << " = " << (num1 * num2) << endl;
 
-	cout << Number3 << endl;
+    if (num2 != 0) {
+        double divResult = num1 / num2;
+        if (isInteger)
+            cout << "³ª´°¼À: " << num1 << " / " << num2 << " = " << (int)divResult << endl; 
+        else
+            cout << "³ª´°¼À: " << num1 << " / " << num2 << " = " << divResult << endl; 
+    }
+    else {
+        cout << "³ª´°¼À: 0À¸·Î ³ª´­ ¼ö ¾ø½À´Ï´Ù!" << endl;
+    }
 
-	int Number4 = Number1 - Number2;
-
-	cout << Number4 << endl;
-
-	int Number5 = Number1 * Number2;
-
-	cout << Number5 << endl;
-
-	float Number6 = (float)Number1 / (float)Number2;
-
-	cout << Number6 << endl;
-
-	int Number7 = Number1 % Number2;
-
-	cout << Number7 << endl;
-
-
-	return 0;
+    return 0;
 }
